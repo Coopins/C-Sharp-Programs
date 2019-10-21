@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{97DEF8F1-5473-4D4F-ADA5-D99743790116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{97DEF8F1-5473-4D4F-ADA5-D99743790116}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyMethods", "ManyMethods\ManyMethods.csproj", "{2ABC6C7B-D0F6-44D2-8E0D-A9B2D304E533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyMethods", "ManyMethods\ManyMethods.csproj", "{2ABC6C7B-D0F6-44D2-8E0D-A9B2D304E533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PigLatin", "PigLatin\PigLatin.csproj", "{DA439C9E-44B5-4169-9DD4-8C970441F678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2ABC6C7B-D0F6-44D2-8E0D-A9B2D304E533}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ABC6C7B-D0F6-44D2-8E0D-A9B2D304E533}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ABC6C7B-D0F6-44D2-8E0D-A9B2D304E533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
