@@ -15,15 +15,15 @@ namespace Manymethods
         public static void Main()
 
         {
-            //Hello();
-            //Addition();
-            //Catdog();
-            //Oddeven();
-            //Inches();
-            //Echo();
-            //Killigram();
-            //Date();
-            //Age();
+            Hello();
+            Addition();
+            Catdog();
+            Oddeven();
+            Inches();
+            Echo();
+            Killigram();
+            Date();
+            Age();
             Guess();
         }
         static void Hello()
