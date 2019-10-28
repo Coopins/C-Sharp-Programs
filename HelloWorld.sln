@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyMethods", "ManyMethods\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PigLatin", "PigLatin\PigLatin.csproj", "{DA439C9E-44B5-4169-9DD4-8C970441F678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors", "RockPaperScissors\RockPaperScissors.csproj", "{F60A42B2-50C5-47C8-9A55-03433ECF6EDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors", "RockPaperScissors\RockPaperScissors.csproj", "{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA439C9E-44B5-4169-9DD4-8C970441F678}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F60A42B2-50C5-47C8-9A55-03433ECF6EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F60A42B2-50C5-47C8-9A55-03433ECF6EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F60A42B2-50C5-47C8-9A55-03433ECF6EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F60A42B2-50C5-47C8-9A55-03433ECF6EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
