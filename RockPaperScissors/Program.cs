@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // Namespace Declaration
-namespace RockPaperScissors
+namespace TicTacToe
 {
     // Program start class
     class InteractiveWelcome
