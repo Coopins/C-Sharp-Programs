@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PigLatin", "PigLatin\PigLat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors", "RockPaperScissors\RockPaperScissors.csproj", "{4CD84F89-7FE2-446F-A9BC-615994DDAFA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{937D7264-D997-40C5-88C8-30B31C5BA1C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{937D7264-D997-40C5-88C8-30B31C5BA1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMind1", "MasterMind1\MasterMind1.csproj", "{7D7DF51A-2243-4CE9-BF4A-04DFD275FC31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "GradeBook\GradeBook.csproj", "{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{937D7264-D997-40C5-88C8-30B31C5BA1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937D7264-D997-40C5-88C8-30B31C5BA1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{937D7264-D997-40C5-88C8-30B31C5BA1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7DF51A-2243-4CE9-BF4A-04DFD275FC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7DF51A-2243-4CE9-BF4A-04DFD275FC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7DF51A-2243-4CE9-BF4A-04DFD275FC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7DF51A-2243-4CE9-BF4A-04DFD275FC31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
