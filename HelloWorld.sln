@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMind1", "MasterMind1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradeBook", "GradeBook\GradeBook.csproj", "{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowersOfHonai", "TowersOfHonai\TowersOfHonai.csproj", "{7BE6FE25-5999-4C82-B68C-2B3642CB453A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C39F96BD-62C8-4E70-A3EA-9354E3AB33FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE6FE25-5999-4C82-B68C-2B3642CB453A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE6FE25-5999-4C82-B68C-2B3642CB453A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE6FE25-5999-4C82-B68C-2B3642CB453A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE6FE25-5999-4C82-B68C-2B3642CB453A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
