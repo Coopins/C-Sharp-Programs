@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// Namespace Declaration
-namespace TicTacToe
-{
     // Program start class
     class InteractiveWelcome
     {
@@ -151,7 +148,7 @@ namespace TicTacToe
 
         }
     }
-}
+
         
     
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // Namespace Declaration
-namespace Manymethods
+namespace TowersOfHonai
 {
 
     // Program start class
