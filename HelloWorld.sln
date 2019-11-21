@@ -19,11 +19,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradeBook", "GradeBook\Grad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowersOfHonai", "TowersOfHonai\TowersOfHonai.csproj", "{7BE6FE25-5999-4C82-B68C-2B3642CB453A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoCos", "PoCos\PoCos.csproj", "{ECDCE824-E67F-4F43-B144-1C70A0E6AFE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoCos", "PoCos\PoCos.csproj", "{ECDCE824-E67F-4F43-B144-1C70A0E6AFE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoItems", "ToDoItems\ToDoItems.csproj", "{A0899C4A-3DAC-4832-AD29-59603405DC83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoItems", "ToDoItems\ToDoItems.csproj", "{A0899C4A-3DAC-4832-AD29-59603405DC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperHeroes", "SuperHeroes\SuperHeroes.csproj", "{2ED77DF0-8644-44D2-9CF5-3196609F38F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperHeroes", "SuperHeroes\SuperHeroes.csproj", "{2ED77DF0-8644-44D2-9CF5-3196609F38F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterMindAgain", "MasterMindAgain\MasterMindAgain.csproj", "{49FAC5CF-59E7-41F0-837B-538EBFD75CDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyMethodsAgain", "ManyMethodsAgain\ManyMethodsAgain.csproj", "{A4C3140C-956C-48C2-9FE3-B55CD1429759}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{2ED77DF0-8644-44D2-9CF5-3196609F38F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ED77DF0-8644-44D2-9CF5-3196609F38F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ED77DF0-8644-44D2-9CF5-3196609F38F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FAC5CF-59E7-41F0-837B-538EBFD75CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FAC5CF-59E7-41F0-837B-538EBFD75CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FAC5CF-59E7-41F0-837B-538EBFD75CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FAC5CF-59E7-41F0-837B-538EBFD75CDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C3140C-956C-48C2-9FE3-B55CD1429759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C3140C-956C-48C2-9FE3-B55CD1429759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C3140C-956C-48C2-9FE3-B55CD1429759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C3140C-956C-48C2-9FE3-B55CD1429759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

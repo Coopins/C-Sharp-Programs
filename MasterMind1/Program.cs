@@ -1,113 +1,134 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleMastermindGame
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        const int MAX_NUMBER = 6666;
-        const int MIN_NUMBER = 1111;
-        const int MAX_INDIV_NUMBER = 6;
-        const int MIN_INDIV_NUMBER = 1;
+        Console.WriteLine("************** Let's play Master-Mind **************\n");
 
+        string name = GetPlayerName();
 
-        static void Main(string[] args)
+        do
         {
-            //Loop necessary to play multiple games
-            while (true)
-            {
-                //Intro Sequence & Game Setup
-                Console.WriteLine("Welcome to Mastermind!");
-                System.Threading.Thread.Sleep(2000);
+            Play(name);
 
-                int intGuesses = NumGuesses();
-                int intSecretCode = GenerateSecretCode();
+            Console.Write("\nWould you like to play again (Y/N)? ");
+        }
+        while (Console.ReadLine().ToUpper() == "Y");
+    }
 
-                bool winState = false;
+    private static void Play(string name)
+    {
+        int numberCount = GetRandomNumberCount();
+        Console.Write(numberCount + " it is. Let's play.");
+        Console.WriteLine();
 
-                bool[] guessAry = { false, false, false, false };
-                bool[] answerAry = { false, false, false, false };
-                Console.Clear();
+        int[] PCArray = GenerateRandomNumbers(numberCount);
+        Console.WriteLine("A {0}-digit number has been chosen. Each possible digit may be the number 1 to 4.\n", numberCount);
 
-                //Guesses Loop
-                while (intGuesses > 0)
-                {
-                    Console.WriteLine("Guesses Remaining: " + intGuesses.ToString());
+        int difficulty = GetGameDifficulty();
 
-                    Console.WriteLine("\nMake your guess:\n");
-                    int intUserGuess = 0;
-                    string strUserGuess = Console.ReadLine();
+        bool won = false;
+        for (int allowedAttempts = difficulty * numberCount; allowedAttempts > 0 && !won; allowedAttempts--)
+        {
+            Console.WriteLine("\nEnter your guess ({0} guesses remaining)", allowedAttempts);
 
+            int[] userArray = GetUserGuess(numberCount);
 
-                    if (isGuessCorrectFormat(ref strUserGuess, intSecretCode))
-                    {
-                        intUserGuess = Int32.Parse(strUserGuess);
+            if (CountHits(PCArray, userArray) == numberCount)
+                won = true;
+        }
 
-                        if (intUserGuess == intSecretCode) //Game has been won.
-                        {
-                            winState = true;
-                            break;
-                        }
+        if (won)
+            Console.WriteLine("You win, {0}!", name);
+        else
+            Console.WriteLine("Oh no, {0}! You couldn't guess the right number.", name);
 
-                        int inPlaceCount = getInPlaceCount(intUserGuess, guessAry, answerAry, intSecretCode);
-                        int outOfPlaceCount = getOutOfPlaceCount(intUserGuess, guessAry, answerAry, intSecretCode);
+        Console.Write("The correct number is: ");
+        for (int j = 0; j < numberCount; j++)
+            Console.Write(PCArray[j] + " ");
+        Console.WriteLine();
+    }
 
-                        string strFeedback = "\nScore: ";
+    private static string GetPlayerName()
+    {
+        Console.Write("Please enter your name: ");
+        string name = Console.ReadLine();
+        Console.WriteLine("Welcome, {0}. Have fun!!\n", name);
+        return name;
+    }
 
-                        //Switch statement builds feedback string.
-                        #region Switch statement w/cases
-                        switch (inPlaceCount)
-                        {
-                            case 0:
-                                break;
-                            case 1:
-                                strFeedback += "+";
-                                break;
-                            case 2:
-                                strFeedback += "++";
-                                break;
-                            case 3:
-                                strFeedback += "+++";
-                                break;
-                        }
-                        switch (outOfPlaceCount)
-                        {
-                            case 0:
-                                break;
-                            case 1:
-                                strFeedback += "-";
-                                break;
-                            case 2:
-                                strFeedback += "--";
-                                break;
-                            case 3:
-                                strFeedback += "---";
-                                break;
-                            case 4:
-                                strFeedback += "----";
-                                break;
-                        }
-                        #endregion
+    public static int GetRandomNumberCount()
+    {
+        int number;
 
-                        Console.WriteLine(strFeedback + "\n");
-                        Console.WriteLine("--------------------\n");
-                        intGuesses--;
-                    }
-                    else
-                        Console.WriteLine("Make sure your input is between 1111 and 6666, with each digit being no larger that 6.");
-                }
-                if (winState)
-                {
-                    Console.WriteLine("--------------------\n");
-                    Console.WriteLine("\nYou solved it!");
-                }
-                else
-                {
-                    Console.WriteLine("\nYou lose. :(\n");
-                    Console.WriteLine("The code was " + intSecretCode);
-                }
+        Console.Write("How many numbers would you like to use in playing the game (4-10)? ");
+        while (!int.TryParse(Console.ReadLine(), out number) || number < 4 || number > 10)
+            Console.WriteLine("You must pick a number between 4 and 10. Choose again.");
+
+        return number;
+    }
+
+    public static int GetGameDifficulty()
+    {
+        int difficulty = 0;
+
+        Console.Write("Choose a difficulty level (1=hard, 2=medium, 3=easy): ");
+        while (!int.TryParse(Console.ReadLine(), out difficulty) || difficulty < 1 || difficulty > 3)
+            Console.WriteLine("Incorrect entry: Please re-enter.");
+
+        return difficulty;
+    }
+
+    public static int[] GenerateRandomNumbers(int PCSize)
+    {
+        int eachNumber;
+        int[] randomNumber = new int[PCSize];
+        Random rnd = new Random();
+
+        Console.Write("PC number: ");
+        for (int i = 0; i < PCSize; i++)
+        {
+            eachNumber = rnd.Next(1, 5);
+            randomNumber[i] = eachNumber;
+            Console.Write(eachNumber);
+        }
+        Console.WriteLine();
+        return randomNumber;
+    }
+
+    public static int[] GetUserGuess(int userSize)
+    {
+        int number = 0;
+        int[] userGuess = new int[userSize];
+        for (int i = 0; i < userSize; i++)
+        {
+            System.Console.Write("Digit {0}: ", (i + 1));
+            while (!int.TryParse(Console.ReadLine(), out number) || number < 1 || number > 4)
+                Console.WriteLine("Invalid number!");
+            userGuess[i] = number;
+        }
+        Console.WriteLine();
+        Console.Write("Your guess: ");
+        for (int i = 0; i < userSize; i++)
+        {
+            Console.Write(userGuess[i] + " ");
+        }
+        Console.WriteLine();
+        return userGuess;
+    }
+
+    public static int CountHits(int[] PCArray, int[] userArray)
+    {
+        int hits = 0;
+
+        for (int i = 0; i < PCArray.Length; i++)
+        {
+            if (PCArray[i] == userArray[i])
+                hits++;
+        }
+
+        Console.WriteLine("Results: {0} Hit(s), {1} Miss(es)", hits, PCArray.Length - hits);
+        return hits;
     }
 }
