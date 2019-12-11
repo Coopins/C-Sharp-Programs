@@ -34,7 +34,7 @@ namespace TowersOfHonai
             Console.WriteLine("Bye {0} ! ", name);
         }
 
-        static void Addition()
+        static void Addition()      
         {
             //A method that ask the user for 2 numbers and prints out their sum
             Console.WriteLine("Pick your first number.: ");
