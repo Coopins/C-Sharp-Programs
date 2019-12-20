@@ -3,79 +3,118 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore; //added
-using System.IO; //added
 
-namespace BookInventory
+namespace Inventory
 {
     class Program
     {
         static void Main(string[] args)
         {
-            BooksContext context = new BooksContext();
 
-            context.Database.EnsureCreated();
+            List<IRentable> things = new List<IRentable>();
 
-            Console.WriteLine("Enter the title and author of the book that you want to add with a ':' in between");
-            Console.WriteLine("Type 'delete' to remove a book from the list");
-
-            String TitleAuthor = Console.ReadLine();
-
-            string[] parts = TitleAuthor.Split(':');
-            if (parts.Length == 2)
+            things.Add(new Boat());
+            things.Add(new House());
+            things.Add(new Car());
+            things.Add(new Pet());
+            foreach (IRentable thing in things)
             {
-                Book NewBook = new Book(parts[0], parts[1]);
-                context.Books.Add(NewBook);
-                context.SaveChanges();
-                Console.WriteLine("Book added");
+                Console.WriteLine(thing);
             }
-            else if (TitleAuthor == "delete")
-            {
-                Console.WriteLine("What is the ID?");
-                int ID = Convert.ToInt32(Console.ReadLine());
-
-                context.Books.Remove(context.Books.Find(ID));
-                context.SaveChanges();
-            }
-
-            else
-            {
-                Console.WriteLine("Invalid entry, not added");
-            }
-            Console.WriteLine("Current list of books are: ");
-            foreach (Book B in context.Books)
-            {
-                Console.WriteLine("{0}-{1} {2}", B.Id, B.Title, B.Author);
-            }
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
-    class Book
+}
+public interface IRentable
+{
+
+    int getDailyRate();
+
+    string getDescription();
+
+}
+public class Boat : IRentable
+{
+    public int HourlyRate = 50;
+    public string description = "Boat";
+    public Boat()
     {
-        public int Id { get; private set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public Book(string Title, String Author)
-        {
-            this.Title = Title;
-            this.Author = Author;
-        }
+
     }
-    class BooksContext : DbContext
+    public string getDescription()
     {
-        public DbSet<Book> Books { get; set; }
+        return description;
+    }
+    public int getDailyRate()
+    {
+        return HourlyRate * 24;
+    }
+    public override string ToString()
+    {
+        return getDescription() + ": " + getDailyRate();
+    }
+}
+public class House : IRentable
+{
+    public string description = "House";
+    public int WeeklyRate = 175;
+    public House()
+    {
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            DirectoryInfo ExecutionDirectory = new DirectoryInfo(AppContext.BaseDirectory);
+    }
+    public string getDescription()
+    {
+        return description;
+    }
+    public int getDailyRate()
+    {
+        return WeeklyRate / 7;
+    }
+    public override string ToString()
+    {
+        return getDescription() + ": " + getDailyRate();
+    }
+}
+public class Car : IRentable
+{
+    public string description = "Car";
+    public int DailyRate = 50;
+    public Car()
+    {
 
-            DirectoryInfo ProjectBase = ExecutionDirectory.Parent.Parent.Parent;
+    }
+    public string getDescription()
+    {
+        return description;
+    }
+    public int getDailyRate()
+    {
+        return DailyRate;
+    }
+    public override string ToString()
+    {
+        return getDescription() + ": " + getDailyRate();
+    }
+}
 
-            String DatabaseFile = Path.Combine(ProjectBase.FullName, "Books.db");
+public class Pet : IRentable
+{
+    public string description = "Pet";
+    public int DailyRate = 30;
+    public Pet()
+    {
 
-            optionsBuilder.UseSqlite("Data Source=" + DatabaseFile);
-
-        }
-
+    }
+    public string getDescription()
+    {
+        return description;
+    }
+    public int getDailyRate()
+    {
+        return DailyRate;
+    }
+    public override string ToString()
+    {
+        return getDescription() + ": " + getDailyRate();
     }
 }

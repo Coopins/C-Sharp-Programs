@@ -8,13 +8,13 @@ using System.IO;
 
 namespace ToDoCheckpoint
 {
-    class ItemRpository        // between the app class and the database
+    class ItemRpository        
     {
         ToDosContext context = new ToDosContext();
         public ItemRpository()
         {
         }
-        // add item
+        
         public void Add(ToDo Add)
         {
             context.Database.EnsureCreated();

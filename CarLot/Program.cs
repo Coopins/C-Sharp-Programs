@@ -10,26 +10,26 @@ namespace CarLot
     {
         static void Main(string[] args)
         {   //                                      First Car lot with 3 cars
-            CarLot Coopins = new CarLot("TMoney's Slammin' Rides");
+            CarLot Coopins = new CarLot("Coop's Awesome Cars!");
 
-            Coopins.AddCar(new Truck("IMNO UG", "Chervoling", "C550", "999.99", "Scary Long"));
+            Coopins.AddCar(new Truck("GO FAST", "Bugatti", "C550", "999.99", "Sonic The Hedgehog fast!"));
 
-            Coopins.AddCar(new Car("UR P00R", "Cadolact", "La Desparado", "55k", "Sedan", "4"));
+            Coopins.AddCar(new Car("SOLVE MYSTERIES", "Volvo", "The Mystery Machine", "55k", "Van", "5"));
 
-            Coopins.AddCar(new Car("FSTR BSTR", "Evade", "Attacker", "43945.27", "Sportscar", "2"));
+            Coopins.AddCar(new Car("SPEED RACER", "Mach 5", "The Winner", "43945.27", "Sportscar", "2"));
 
             Coopins.PrintLot();
 
             //                                      Second Car lot with 4 cars
-            CarLot Rubin = new CarLot("Mrs. Friskey's Shagin' Wagons");
+           CarLot Rubin = new CarLot("Rubin's Odd Cars!");
 
-            Rubin.AddCar(new Truck("LVR TRKR", "Frog", "River Raider", "1999.99", "Double"));
+            Rubin.AddCar(new Truck("PLANET EXPRESS SHIP", "", "Space Jam", "1999.99", "8"));
 
-            Rubin.AddCar(new Car("BIG FMLY", "VMB", "2210", "15k", "Station Wagon", "4"));
+            Rubin.AddCar(new Car("THE BATMOBILE", "The Batman (Wayne Enterprises", "Classified", "Classified", "Type: Classified", "2"));
 
-            Rubin.AddCar(new Car("N0 1 RKN", "Yuido", "Sleeper 8", "28951.27", "Van", "5"));
+            Rubin.AddCar(new Car("UFO", "???", "???", "???", "???", "???"));
 
-            Rubin.AddCar(new Car("1 NITE 4U", "Ocelot", "Party Hauler", "534.28/Month", "Limo", "8"));
+            Rubin.AddCar(new Car("EXPERIMRNTAL MILITARY AIRCRAFT", "Classified", "Classified", "Classified", "Indigo Drive", "Classified"));
 
             Rubin.PrintLot();
 
