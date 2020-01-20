@@ -15,16 +15,16 @@ namespace TowersOfHonai
         public static void Main()
 
         {
-            Hello();
+            //Hello();
             Addition();
-            Catdog();
-            Oddeven();
-            Inches();
-            Echo();
-            Killigram();
-            Date();
-            Age();
-            Guess();
+            //Catdog();
+            //Oddeven();
+            //Inches();
+            //Echo();
+            //Killigram();
+            //Date();
+            //Age();
+            //Guess();
         }
         static void Hello()
         {
