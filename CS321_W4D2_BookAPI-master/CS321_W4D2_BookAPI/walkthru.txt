@@ -1,0 +1,44 @@
+﻿1. Add a new Core project to the solution.
+   1. Right-click on the Solution (the topmost node in the solution explorer) and choose Add > Add New Project.
+   1. In the .Net Core section, choose Library, and then Class Library.
+   1. Name it CS321_W4D2_BookAPI.Core.
+1. Add a new Infrastructure project to the solution.
+   1. Right-click on the Solution and choose Add > Add New Project.
+   1. In the .Net Core section, choose Library and then Class Library.
+   1. Name it CS321_W4D2_BookAPI.Infrastructure.
+1. You should now have three projects in your solution, like this:
+   * CS321_W4D2_BookAPI
+   * CS321_W4D2_BookAPI.Core
+   * CS321_W4D2_BookAPI.Infrastructure
+1. Now we need to add references to our BookAPI project so it can use the code that will exist in Core and Infrastructure.
+   1. Expand the BookAPI project. 
+   1. Right click on the **Dependencies** and choose **Edit References**.
+   1. Choose the Projects tab. You should see a list of the other two projects, Core and Infrastructure.
+   1. Check both projects and click Ok. 
+1. In the Infrastructure project, let's add a referece to the Core project.
+   1. Expand the Infrastructure project.
+   1. Right click on the **Dependencies** and choose **Edit References**.
+   1. Choose the Projects tab. You should see a list of the other two projects, Core and BookAPI. Notice that it won't let you choose BookAPI because that would cause a cyclical reference -- BookAPI already references Data, so Data can't reference BookAPI.
+   1. Check the Core project and click Ok. 
+1. While we're in the Infrastructure project, we need to add EntityFramework packages so we can use EF.
+   1. Right click on **Dependencies** and choose **Add Packages**.
+   1. Search for and add each of the three following packages:
+      1. Microsoft.EntityFrameworkCore
+      1. Microsoft.EntityFrameworkCore.Design
+      1. Microsoft.EntityFrameworkCore.Sqlite
+      1. Wait a moment and accept all licenses.
+1. Move the Data folder from BookAPI into Infrastructure. You can delete the Class1.cs file that was added by default when you created the project.
+1. Move the Models folder from BookAPI into Core. You can delete the Class1.cs file that was added by default.
+1. Move the Services folder from BookAPI into Core.
+1. Try building the project. It should compile successfully. If you run it, though, you may get an error because we haven't created the database yet.
+1. Let's get the database set up. 
+1. Open the BookContext class. Double-check the UseSqlite() method to make sure that it has a valid path to the books.db database file. It should be something like:
+```csharp
+             optionsBuilder.UseSqlite("Data Source=../CS321_W4D2_BookAPI.Infrastructure/books.db");
+```
+   1. In your terminal, CD into the Infrastructure project folder. We want our migrations folder to be created in that project.
+   1. Create the initial migration:
+      > dotnet ef migrations add Initial
+   1. Update the database:
+      > dotnet ef database update
+1. Run your API and confirm that everything works.
