@@ -66,14 +66,7 @@ namespace CS321_W5D2_BlogAPI.Infrastructure.Data
                 _dbContext.Blogs.Remove(currentBlog);
                 _dbContext.SaveChanges();
             }
-            /* else
-            {
-                throw new Exception("Selected Blog does not exsist.");
-            }  //optional */
-
-            /* if we could use Remove(int id)
-            _dbContext.Blogs.Remove(blog);
-            _dbContext.SaveChanges(); */
+          
         }
     }
 }
